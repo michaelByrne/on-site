@@ -1,0 +1,106 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.3
+  DisplayCopNames: true
+
+# TODO: This should be enabled when we figure out a better way to store YAML data, like not.
+Security/YAMLLoad:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+# TODO: Enable this once we go to rails 4
+Rails/SaveBang:
+  Enabled: false
+
+# TODO: Enable this once we go to rails 4
+Rails/DynamicFindBy:
+  Enabled: false
+
+# TODO: Enable this once we go to rails 4
+Rails/FindBy:
+  Enabled: false
+
+# TODO: Enable this once we go to rails 4
+Rails/ActionFilter:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+RSpec/Focus:
+  Enabled: true
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 110
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/state_machines/*'
+    - 'app/graphql/types/*'
+    - 'spec/**/*'
+    - 'lib/tasks/**/*'
+    - 'config/**/*'
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - 'db/migrate/*'
+
+Style/Lambda:
+  Exclude:
+    - 'app/graphql/types/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+# This is useful to disable because rubocop auto-correct will remove it otherwise.
+Lint/Debugger:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: start_of_line
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
