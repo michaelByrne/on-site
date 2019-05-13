@@ -6,6 +6,7 @@ gem 'rails', '~> 5.2.3'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'graphql', '~> 1.9.4'
+gem 'mysql2'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
