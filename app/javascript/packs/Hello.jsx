@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
-import { Query } from 'react-apollo';
+import { useQuery } from '@apollo/react-hooks';
 
 const Styled = styled.div`
   color: #ff3636;
@@ -10,22 +10,16 @@ const Styled = styled.div`
 `;
 
 const TEST_FIELD_QUERY = gql`
-  query TEST_FIELD_QUERY {
+  query Test {
     testField
   }
 `;
 
 export default function Hello() {
-  return (
-    <Styled>
-      <Query query={TEST_FIELD_QUERY}>
-        {({ data, loading, error }) => {
-          if (loading) return 'Loading...';
-          if (error) return error;
+  const { data, loading, error } = useQuery(TEST_FIELD_QUERY);
 
-          return <Styled>{data.testField}</Styled>
-        }}
-      </Query>
-    </Styled>
-  );
+  if (loading) return 'loading...';
+  if (error) return error.message;
+
+  return <Styled>{data.testField}</Styled>;
 }
