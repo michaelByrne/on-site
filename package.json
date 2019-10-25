@@ -18,7 +18,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.8.4",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "foreman": "^3.0.1",
