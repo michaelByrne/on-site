@@ -4,10 +4,10 @@ module Types
     # They will be entry points for queries on your schema.
 
     # TODO: remove me
-    field :test_field, String, null: false,
+    field :all_properties, [PropertyType], null: false,
       description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    def all_properties
+      Property.all
     end
   end
 end

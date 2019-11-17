@@ -6,7 +6,10 @@ import { createHttpLink } from 'apollo-link-http';
 import { render } from 'react-dom'
 import { setContext } from 'apollo-link-context';
 
-import Hello from './Hello';
+import './App.css';
+
+import MapContext from '../components/MapContext';
+import Header from '../components/Header';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -33,7 +36,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Hello />
+      <Header />
+      <MapContext />
     </ApolloProvider>
   );
 }
