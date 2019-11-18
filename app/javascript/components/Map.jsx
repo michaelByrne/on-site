@@ -29,7 +29,7 @@ export default class Map extends Component {
     };
   }
 
-  renderMarker = (property) => {
+  renderMarker = property => {
     const { lat, long } = property;
 
     return (
